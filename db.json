@@ -19,6 +19,11 @@
       "nomDepartamento": "San Andres y Providencia",
       "bandera": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_San_Andr%C3%A9s_y_Providencia.svg/1024px-Flag_of_San_Andr%C3%A9s_y_Providencia.svg.png",
       "id": 4
+    },
+    {
+      "nomDepartamento": "Amazonia",
+      "bandera": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Amazonas_%28Colombia%29.svg/1024px-Flag_of_Amazonas_%28Colombia%29.svg.png",
+      "id": 5
     }
   ],
   "Ciudades": [
