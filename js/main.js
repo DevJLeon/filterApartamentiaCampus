@@ -1,4 +1,4 @@
-import {addDepartment,resetCreateCityForm,createCity,editRoute,deleteRoute,cargarDepartamentos,addPointInput,resetPointsForm} from "../js/functions.js";
+import {addDepartment,resetCreateCityForm,createCity,editRoute,deleteRoute,cargarDepartamentos,addPointInput,resetDepartmentsForm} from "../js/functions.js";
 import {  $createDepartmentForm,
     $addPointBtn,
     $closeModalBtn1,
@@ -8,9 +8,9 @@ import {  $createDepartmentForm,
 
 $addPointBtn.addEventListener("click", addPointInput);
 
-$closeModalBtn1.addEventListener("click", resetPointsForm);
+$closeModalBtn1.addEventListener("click", resetDepartmentsForm);
 
-$closeModalBtn2.addEventListener("click", resetPointsForm);
+$closeModalBtn2.addEventListener("click", resetDepartmentsForm);
 
 document.addEventListener("click", resetCreateCityForm);
 

@@ -66,6 +66,12 @@
         "lat": 4,
         "lon": 72
       }
+    },
+    {
+      "nomCiudad": "Zapatoca",
+      "departamentoId": "1",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Zapatoca%2C_parque.JPG/280px-Zapatoca%2C_parque.JPG",
+      "id": 5
     }
   ]
 }

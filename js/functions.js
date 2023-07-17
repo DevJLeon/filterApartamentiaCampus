@@ -25,7 +25,7 @@ export function addPointInput(){
         $createRouteInputs.appendChild(newPoint);
 };
 
-export function resetPointsForm(){
+export function resetDepartmentsForm(){
     $createRouteInputs.innerHTML = `
     <div class="form-floating mb-3">
         <input type="text" name="routeName" class="form-control" id="routeName floatingInput-Route" placeholder="Ruta del Sol" required>
@@ -201,7 +201,6 @@ export async function createCity(e){
     if(e.target.matches(".addCityBtn")){
         console.log("CreateCity Button Working")
         const cityId = e.target.getAttribute("data-id")
-        console.log(cityId)
         const $createCityInputsDiv =$createCityForm.querySelector(".createCityInputs")
         const $relatedCity = document.createElement("div")
         $relatedCity.setAttribute("class","form-floating")
@@ -213,22 +212,31 @@ export async function createCity(e){
 
         $createCityInputsDiv.appendChild($relatedCity)
         
-        /* try{
-            let optionsCity = {
-                method:"DELETE",
-                headers:{
-                    "Content-type":"application/json; chatset=utf-8"
-                },
-                body:JSON.stringify({
-                    nomDepartamento:departmentName,
-                    bandera:flagIcon
-                })
-            };
-            fetch(`${URL}/Departamentos/${deleteId}`,optionsCity);
-            fetch(`${URL}/Ciudades`);
+        try{
+            $createCityForm.addEventListener("submit",async(evento)=>{
+                evento.preventDefault()
+                const $newCitiName = $createCityForm.newCityName.value,
+                $newCityPicture =$createCityForm.cityPicture.value;
+
+                let optionsCity = {
+                    method:"POST",
+                    headers:{
+                        "Content-type":"application/json; chatset=utf-8"
+                    },
+                    body:JSON.stringify({
+                        nomCiudad:$newCitiName,
+                        departamentoId:cityId,
+                        imagen:$newCityPicture
+                    }) 
+                };
+                const departmentRes = await fetch(`${URL}/Departamentos/${cityId}`);
+                const cityRes = await fetch(`${URL}/Ciudades`,optionsCity);
+
+                $createCityForm.reset()
+            })
         }catch(error){
             console.log("Error del modal formulario: "+error)
-        } */
+        }
         
     }
 }
