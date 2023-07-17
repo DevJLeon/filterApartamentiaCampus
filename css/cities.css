@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+.routes-container{
+    margin: 50px;
+    background-color: #ffffff48;
+    position: relative;
+    align-items: center;
+    padding: 10px ;
+    border-radius: 30px;
+}
+
+.route{
+    margin: 30px 10px;
+    padding: 10px;
+    transition: .2s;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.route:hover{
+    background-color: #d8edd9;
+    cursor: default;
+    transform: scale(1.03);
+}
+
+.route-icon{
+    width: 70px;
+}
+
+.route-info{
+    font-style: italic;
+}
+
+.route-title{
+    font-weight: bold;
+}
+
+.route-name{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    color: #0b2833;
+}
+
+.route-nodes{
+    margin: 10px 40px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+.nodes-tag{
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.botones input{
+    width: 90px;
+    margin: 3px 5px;
+    transition: .2s;
+}
+
+/* Modal customization */
+
+.createRouteInputs input{
+    margin-bottom: 15px;
+}
+
+.botones input:hover{
+    transform: scale(1.05);
+}
+
+.addPointBtn{
+    background-color: #3bce47;
+    transition: .2s;
+    margin-top: 20px;
+}
+
+.addPointBtn:hover{
+    background-color: #59e465;
+}
+
+.addCityBtn{
+    background-color: #2541277a;
+    color: #3bce47;
+    font-size: 15px;
+    margin-top: 5px;
+    transition: .2s;
+}
+
+.addCityBtn:hover{
+    background-color: #0b2833;
+    color: #3bce47;
+    font-size: 15px;
+    margin-top: 5px;
+    transform: scale(1.05);
+}

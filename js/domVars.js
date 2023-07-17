@@ -1,0 +1,10 @@
+export const $routesContainer = document.querySelector(".routes-container");
+export const $createDepartmentForm = document.querySelector(".createRouteForm");
+export const $addPointBtn = document.querySelector(".addPointBtn");
+export const $createRouteInputs = document.querySelector(".createRouteInputs");
+export const $closeModalBtn1 = document.querySelector(".close-modal-btn1");
+export const $closeModalBtn2 = document.querySelector(".close-modal-btn2");
+export const $routeTemplate = document.querySelector(".route-template");
+export const $fragment = document.createDocumentFragment();
+export const $createCityForm = document.querySelector(".createCityForm")
+export const URL = "http://localhost:3000";

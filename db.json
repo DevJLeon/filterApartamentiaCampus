@@ -1,0 +1,66 @@
+{
+  "Departamentos": [
+    {
+      "id": 1,
+      "nomDepartamento": "Santander",
+      "bandera": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Flag_of_Santander_Department.svg/1024px-Flag_of_Santander_Department.svg.png"
+    },
+    {
+      "id": 2,
+      "nomDepartamento": "Cundinamarca",
+      "bandera": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Cundinamarca.svg/1024px-Flag_of_Cundinamarca.svg.png"
+    },
+    {
+      "nomDepartamento": "Casanare",
+      "bandera": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Casanare.svg/1024px-Flag_of_Casanare.svg.png",
+      "id": 3
+    },
+    {
+      "nomDepartamento": "San Andres y Providencia",
+      "bandera": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_San_Andr%C3%A9s_y_Providencia.svg/1024px-Flag_of_San_Andr%C3%A9s_y_Providencia.svg.png",
+      "id": 4
+    }
+  ],
+  "Ciudades": [
+    {
+      "id": 1,
+      "nomCiudad": "Bucaramanga",
+      "departamentoId": 1,
+      "imagen": "https://colombia.com/bucaramanga.jpg",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 2,
+      "nomCiudad": "Barrancabermeja",
+      "departamentoId": 1,
+      "imagen": "https://colombia.com/barranca.jpg",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 3,
+      "nomCiudad": "Bogotá",
+      "departamentoId": 2,
+      "imagen": "https://colombia.com/bogota.jpg",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 4,
+      "nomCiudad": "Cajicá",
+      "departamentoId": 2,
+      "imagen": "https://colombia.com/cajica.jpg",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    }
+  ]
+}
