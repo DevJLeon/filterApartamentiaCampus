@@ -168,9 +168,11 @@ export async function deleteRoute(e){
                     "Content-type":"application/json; chatset=utf-8"
                 }
             };
-            await fetch(`${URL}/Departamentos/${deleteId}`,optionsCity);
-            await fetch(`${URL}/Ciudades?departamentoId=${deleteId}`,optionsCity);
-            
+            //await fetch(`${URL}/Departamentos/${deleteId}`,optionsCity);
+            let mondongo = await (await fetch(`${URL}/Ciudades?departamentoId=${deleteId}`)).json();
+            mondongo.forEach(async elemento=>{
+                await fetch(`${URL}/Ciudades/${elemento.id}`,optionsCity);
+            })
         }catch(error){
             console.log("Error: "+error)
         }
