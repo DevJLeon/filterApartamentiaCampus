@@ -59,27 +59,27 @@ export async function cargarDepartamentos(){
 
         departamentos.forEach(ruta => {
             let $clone = document.createElement("div"),
-            $routeNodes = document.createElement("div"),
-            $nodesTag = document.createElement("div"),
+            $departmentsCities = document.createElement("div"),
+            $citiesTag = document.createElement("div"),
             $pointsUl = document.createElement("ul"),
             $botones = document.createElement("div"),
             $addCity = document.createElement("input")
 
 
             $clone.setAttribute("class","row-xl route");
-            $routeNodes.setAttribute("class","route-nodes");
-            $nodesTag.setAttribute("class","nodes-tag");
-            $nodesTag.innerHTML="puntos:";
+            $departmentsCities.setAttribute("class","route-nodes");
+            $citiesTag.setAttribute("class","nodes-tag");
+            $citiesTag.innerHTML="Ciudades:";
             $pointsUl.setAttribute("class","points-list")
             $botones.setAttribute("class","botones")
             $addCity.innerHTML="Añadir Ciudad"
 
-            $routeNodes.appendChild($nodesTag)
+            $departmentsCities.appendChild($citiesTag)
 
             $clone.innerHTML=`
             <img class="route-icon" src="${ruta.bandera}" alt="">
             <div class="container route-info justify-content-center">
-                <span class="route-title bold">Ruta:</span><br>
+                <span class="route-title bold">Departamento:</span><br>
                 <div class="route-name">${ruta.nomDepartamento}</div>
             </div>
             `
@@ -95,6 +95,7 @@ export async function cargarDepartamentos(){
 
             $addCity.setAttribute("type","button")
             $addCity.setAttribute("data-id",`${ruta.id}`)
+            $addCity.setAttribute("data-name",`${ruta.nomDepartamento}`)
             $addCity.setAttribute("value","Añadir ciudad")
             $addCity.setAttribute("class","addCityBtn btn")
             $addCity.setAttribute("data-bs-toggle","modal")
@@ -107,8 +108,8 @@ export async function cargarDepartamentos(){
                 <input type="button" data-id="${ruta.id}" data-bs-toggle="modal" data-bs-target="#modalModificar"  data-accion="Actualizar" value="Actualizar" class="edit btn-guardar bg-warning border-0 rounded bg-secondary px-2">
             `
 
-            $routeNodes.appendChild($pointsUl)
-            $clone.appendChild($routeNodes)
+            $departmentsCities.appendChild($pointsUl)
+            $clone.appendChild($departmentsCities)
             $clone.appendChild($botones)
 
 
@@ -160,22 +161,22 @@ export async function deleteRoute(e){
         console.log("Delete Button Working")
         const deleteId = e.target.getAttribute("data-id")
         console.log(deleteId)
-        /* try{
+        try{
             let optionsCity = {
                 method:"DELETE",
                 headers:{
                     "Content-type":"application/json; chatset=utf-8"
-                },
-                body:JSON.stringify({
-                    nomDepartamento:departmentName,
-                    bandera:flagIcon
-                })
+                }
             };
-            fetch(`${URL}/Departamentos/${deleteId}`,optionsCity);
-            fetch(`${URL}/Ciudades`);
+            //await fetch(`${URL}/Departamentos/${deleteId}`,optionsCity);
+            const resCiudadesAEliminar = fetch(`${URL}/Ciudades?departamentoId=${deleteId}`);
+            const jsonCiudadesAEliminar = resCiudadesAEliminar.json()
+
+
+            console.log(jsonCiudadesAEliminar)
         }catch(error){
-            console.log("Error del modal formulario: "+error)
-        } */
+            console.log("Error: "+error)
+        }
         
     }
 }
@@ -201,13 +202,14 @@ export async function createCity(e){
     if(e.target.matches(".addCityBtn")){
         console.log("CreateCity Button Working")
         const cityId = e.target.getAttribute("data-id")
+        const cityName = e.target.getAttribute("data-name")
         const $createCityInputsDiv =$createCityForm.querySelector(".createCityInputs")
         const $relatedCity = document.createElement("div")
         $relatedCity.setAttribute("class","form-floating")
 
         $relatedCity.innerHTML = `
-        <input type="text" name="routeName" class="form-control" id="relatedCity" floatingInput-City" placeholder="BucaraGod" value="${cityId}" required disabled>
-        <label for="routeName">Ciudad Relacionada</label>
+        <input type="text" name="routeName" class="form-control" id="relatedCity" floatingInput-City" placeholder="BucaraGod" value="${cityName}" required disabled>
+        <label for="routeName">Departamento Relacionada</label>
         `
 
         $createCityInputsDiv.appendChild($relatedCity)
