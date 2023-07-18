@@ -168,12 +168,9 @@ export async function deleteRoute(e){
                     "Content-type":"application/json; chatset=utf-8"
                 }
             };
-            //await fetch(`${URL}/Departamentos/${deleteId}`,optionsCity);
-            const resCiudadesAEliminar = fetch(`${URL}/Ciudades?departamentoId=${deleteId}`);
-            const jsonCiudadesAEliminar = resCiudadesAEliminar.json()
-
-
-            console.log(jsonCiudadesAEliminar)
+            await fetch(`${URL}/Departamentos/${deleteId}`,optionsCity);
+            await fetch(`${URL}/Ciudades?departamentoId=${deleteId}`,optionsCity);
+            
         }catch(error){
             console.log("Error: "+error)
         }
